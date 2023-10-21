@@ -1,0 +1,77 @@
+{% extends 'base/layout.html' %}
+
+{% block header-link %}{% endblock %}
+
+{% block page-title %}HOME{% endblock %}
+
+{% block main %}
+    <div class="row">
+        <div class="col-md-2"></div>
+
+        <div class="col-md-2">
+            <div class="row">
+                <div class="col-12">
+                    <p id="contact-us-header">CONTACT US!</p>
+                </div>
+            </div>
+
+            <div class="row text-center">
+                <div class="col-12">
+                    <div class="contact-us-box">
+
+                        <form method="post" action="{% url 'home' %}">
+                            {% csrf_token %}
+
+                            {{ form.name }}
+                            {{ form.name.errors }}
+
+                            <br/>
+
+                            {{ form.email }}
+                            {{ form.email.errors }}
+
+                            <br/>
+                            {{ form.message }}
+                            {{ form.message.errors }}
+
+
+
+                            <br/>
+
+                            <button class="btn btn-secondary" type="submit">Send</button>
+                        </form>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-md-6">
+
+            <div id="main-box">
+
+                <br/>
+
+                <h4 style="text-align: center;">Efficiently connected to the world’s markets</h4>
+
+                <br/>
+
+                <p style="text-align: justify;">With almost a decade operating in international markets, Jana General
+                    Trading LLC is a trading company born from desire and ambition of its founders to bring markets
+                    closer, establishing close and trusting relationships, and enhancing the best opportunities and
+                    investments in the areas of new technologies, equipment and services related with the
+                    telecommunications sector.</p>
+
+                <br/>
+
+                <p style="text-align: justify;">Based on our best execution policy, our experienced traders provide
+                    swift, first-class services across all asset classes and international markets and strive to
+                    maximize your returns.</p>
+
+            </div>
+        </div>
+
+        <div class="col-md-2"></div>
+
+    </div>
+{% endblock %}
