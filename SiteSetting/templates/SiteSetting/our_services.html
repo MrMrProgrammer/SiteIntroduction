@@ -5,14 +5,18 @@
 {% block header_email %}{{ site_setting.header_email }}{% endblock %}
 {% block header_address %}{{ site_setting.header_address }}{% endblock %}
 {% block footer_license %}{{ site_setting.footer_license }}{% endblock %}
+{% block site_favicon %}{{ site_setting.favicon.url }}{% endblock %}
+
 
 {% block slider %}
     {% for img in slider_images %}
-        <div class="carousel-item {% if forloop.first %}active{% endif %}">
-            <img src="{{ img.image.url }}" alt="Image 1">
+        <div class="carousel-item {% if forloop.first %}active{% endif %} bd-container-inner-wrapper">
+            <img style="object-fit: cover;" width="1829px" height="445px" src="{{ img.image.url }}" alt="Image 1">
         </div>
     {% endfor %}
 {% endblock %}
+
+{% block page_name3 %}active-page{% endblock %}
 
 {% block page-title %}OUR SERVIECES{% endblock %}
 
