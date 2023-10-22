@@ -60,3 +60,16 @@ body {
     padding: 10px;
     background-color:rgba(255, 255, 255, 0.596);
 }
+
+/*.carousel-item {*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    height: 445px; !* ارتفاع اسلایدر شما *!*/
+/*    text-align: center;*/
+/*}*/
+
+.carousel-item img {
+    max-width: 100%;
+    max-height: 100%;
+}

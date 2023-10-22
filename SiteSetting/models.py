@@ -31,6 +31,8 @@ class HomeDetails(models.Model):
 
     class Meta:
         db_table = 'Home Settings'
+        verbose_name = 'Home Setting'
+        verbose_name_plural = 'Home Settings'
 
     def __str__(self):
         return self.header1
@@ -50,6 +52,8 @@ class AboutUsDetails(models.Model):
 
     class Meta:
         db_table = 'About Us Settings'
+        verbose_name = 'About Us'
+        verbose_name_plural = 'About Us'
 
 
 class OurServicesDetails(models.Model):
@@ -66,6 +70,8 @@ class OurServicesDetails(models.Model):
 
     class Meta:
         db_table = 'Our Services Settings'
+        verbose_name = 'Our Service'
+        verbose_name_plural = 'Our Services'
 
 
 class SliderImage(models.Model):

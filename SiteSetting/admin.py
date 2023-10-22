@@ -1,21 +1,34 @@
 from django.contrib import admin
-
-# Register your models here.
-
-
-from django.contrib import admin
 from . import models
 
 
-# class showDay(admin.ModelAdmin):
-#     list_display = ["__str__"]
-#     list_filter = ["fields"]
-#     list_editable = ["fields"]
-#     list_filter = ["fields"]
+class ShowSiteSetting(admin.ModelAdmin):
+    list_display = ['header_phone_umber', 'header_email', 'header_address', 'footer_license', 'is_active']
+    list_filter = ["is_active"]
 
 
-admin.site.register(models.SiteSetting)
-admin.site.register(models.HomeDetails)
-admin.site.register(models.AboutUsDetails)
-admin.site.register(models.OurServicesDetails)
-admin.site.register(models.SliderImage)
+class ShowHomeDetails(admin.ModelAdmin):
+    list_display = ['is_active', 'header1', 'body1', 'header2', 'body2', 'header3', 'body3', ]
+    list_filter = ["is_active"]
+
+
+class ShowAboutUsDetails(admin.ModelAdmin):
+    list_display = ['is_active', 'header1', 'body1', 'header2', 'body2', 'header3', 'body3', ]
+    list_filter = ["is_active"]
+
+
+class ShowOurServicesDetails(admin.ModelAdmin):
+    list_display = ['is_active', 'header1', 'body1', 'header2', 'body2', 'header3', 'body3', ]
+    list_filter = ["is_active"]
+
+
+class ShowSliderImage(admin.ModelAdmin):
+    list_display = ['__str__', 'is_active', 'image']
+    list_filter = ["is_active"]
+
+
+admin.site.register(models.SiteSetting, ShowSiteSetting)
+admin.site.register(models.HomeDetails, ShowHomeDetails)
+admin.site.register(models.AboutUsDetails, ShowAboutUsDetails)
+admin.site.register(models.OurServicesDetails, ShowOurServicesDetails)
+admin.site.register(models.SliderImage, ShowSliderImage)
