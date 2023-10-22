@@ -1,5 +1,19 @@
 {% extends 'base/layout.html' %}
 
+{% block header_logo %}{{ site_setting.header_logo.url }}{% endblock %}
+{% block header_phone_number %}{{ site_setting.header_phone_umber }}{% endblock %}
+{% block header_email %}{{ site_setting.header_email }}{% endblock %}
+{% block header_address %}{{ site_setting.header_address }}{% endblock %}
+{% block footer_license %}{{ site_setting.footer_license }}{% endblock %}
+
+{% block slider %}
+    {% for img in slider_images %}
+        <div class="carousel-item {% if forloop.first %}active{% endif %}">
+            <img src="{{ img.image.url }}" alt="Image 1">
+        </div>
+    {% endfor %}
+{% endblock %}
+
 {% block page-title %}OUR SERVIECES{% endblock %}
 
 {% block header-link %}{% endblock %}
@@ -7,41 +21,56 @@
 {% block main %}
     <div class="row">
         <div class="col-md-2"></div>
+
         <div class="col-md-2"></div>
+
         <div class="col-md-6">
+
             <div id="main-box">
 
                 <h3>OUR SERVICES</h3>
 
                 <br/>
 
+                {% if our_services_setting.header1 %}
+                    <h4 style="text-align: center;">{{ our_services_setting.header1 }}</h4>
+                {% endif %}
 
-                <p style="text-align: justify;">
+                <br/>
 
+                {% if our_services_setting.body1 %}
+                    <p style="text-align: justify;">{{ our_services_setting.body1 }}</p>
+                {% endif %}
 
-                    SERVICES THAT ENHANCE OUR PRODUCTS
+                <br/>
 
-                    We focus on creating real value for our customers with services that complement the high quality products we offer. Each of our Business Groups is a well-developed team of Sales  always providing competitive quotes upon request, Transportation and Technical Service Specialists collaborating together to provide fresh ideas and innovative solutions to support our customers’ business growth.
+                {% if our_services_setting.header2 %}
+                    <h4 style="text-align: center;">{{ our_services_setting.header2 }}</h4>
+                {% endif %}
 
+                <br/>
 
+                {% if our_services_setting.body2 %}
+                    <p style="text-align: justify;">{{ our_services_setting.body2 }}</p>
+                {% endif %}
 
-                    "A Superior Range of Services Unmatched By Our Competition"
+                <br/>
 
+                {% if our_services_setting.header3 %}
+                    <h4 style="text-align: center;">{{ our_services_setting.header3 }}</h4>
+                {% endif %}
 
+                <br/>
 
-                    LOGISTICS
-                    We support and advise with the world’s largest freight carriers to confidently move our products from their origin to our customers’ door at the most competitive rates available. Using today’s advanced logistics systems, we accurately track and deliver shipments on schedule to efficiently improve our customers’ supply chain process.
+                {% if our_services_setting.body3 %}
+                    <p style="text-align: justify;">{{ our_services_setting.body3 }}</p>
+                {% endif %}
 
+                <br/>
 
+            </div>
 
-                    STRATEGICALLY LOCATED INVENTORIES
-                    We maintain strategically located inventories of the most recognized brands in the industry. Our broad base of products for on-demand shipment gives our customers the most cost-effective and timely options to improve their production or facility planning process.
-
-
-
-                    TECHNICAL SERVICES
-                    Our trained technicians work conjointly with our customers performing services that include advisory, technical support, installation, training, ongoing technical support, and preventive maintenance.            </div>
+            <div class="col-md-2"></div>
         </div>
-        <div class="col-md-2"></div>
     </div>
 {% endblock %}

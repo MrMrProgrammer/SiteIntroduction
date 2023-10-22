@@ -1,10 +1,29 @@
 {% extends 'base/layout.html' %}
 
+{% block header_logo %}{{ site_setting.header_logo.url }}{% endblock %}
+{% block header_phone_number %}{{ site_setting.header_phone_umber }}{% endblock %}
+{% block header_email %}{{ site_setting.header_email }}{% endblock %}
+{% block header_address %}{{ site_setting.header_address }}{% endblock %}
+{% block footer_license %}{{ site_setting.footer_license }}{% endblock %}
+{% block site_favicon %}{{ site_setting.favicon.url }}{% endblock %}
+{% block site_thumbnail %}{{ site_setting.favicon.url }}{% endblock %}
+
+{% block slider %}
+    {% for img in slider_images %}
+        <div class="carousel-item {% if forloop.first %}active{% endif %}">
+            <img src="{{ img.image.url }}" alt="Image 1">
+        </div>
+    {% endfor %}
+{% endblock %}
+
+
+
 {% block header-link %}{% endblock %}
 
 {% block page-title %}HOME{% endblock %}
 
 {% block main %}
+
     <div class="row">
         <div class="col-md-2"></div>
 
@@ -52,21 +71,41 @@
 
                 <br/>
 
-                <h4 style="text-align: center;">Efficiently connected to the world’s markets</h4>
+                {% if home_setting.header1 %}
+                    <h4 style="text-align: center;">{{ home_setting.header1 }}</h4>
+                {% endif %}
 
                 <br/>
 
-                <p style="text-align: justify;">With almost a decade operating in international markets, Jana General
-                    Trading LLC is a trading company born from desire and ambition of its founders to bring markets
-                    closer, establishing close and trusting relationships, and enhancing the best opportunities and
-                    investments in the areas of new technologies, equipment and services related with the
-                    telecommunications sector.</p>
+                {% if home_setting.body1 %}
+                    <p style="text-align: justify;">{{ home_setting.body1 }}</p>
+                {% endif %}
 
                 <br/>
 
-                <p style="text-align: justify;">Based on our best execution policy, our experienced traders provide
-                    swift, first-class services across all asset classes and international markets and strive to
-                    maximize your returns.</p>
+                {% if home_setting.header2 %}
+                    <h4 style="text-align: center;">{{ home_setting.header2 }}</h4>
+                {% endif %}
+
+                <br/>
+
+                {% if home_setting.body2 %}
+                    <p style="text-align: justify;">{{ home_setting.body2 }}</p>
+                {% endif %}
+
+                <br/>
+
+                {% if home_setting.header3 %}
+                    <h4 style="text-align: center;">{{ home_setting.header3 }}</h4>
+                {% endif %}
+
+                <br/>
+
+                {% if home_setting.body3 %}
+                    <p style="text-align: justify;">{{ home_setting.body3 }}</p>
+                {% endif %}
+
+                <br/>
 
             </div>
         </div>
